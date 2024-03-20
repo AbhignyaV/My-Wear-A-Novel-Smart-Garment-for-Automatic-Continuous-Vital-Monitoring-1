@@ -1,0 +1,102 @@
+{% extends 'SProvider/design1.html' %}
+{% block researchblock %}
+
+
+<link rel="icon" href="images/icon.png" type="image/x-icon" />
+
+	<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet">
+
+
+
+		<style>
+			body {background-color:#000000;}
+			.container-fluid {padding:50px;}
+			.container{background-color:white;padding:50px;   }
+			#title{font-family: 'Fredoka One', cursive;
+}
+			.text-uppercase{
+			font-family: 'Righteous', cursive;
+
+			}
+			.tweettext{
+
+    border: 2px solid yellowgreen;
+    width: 1104px;
+    height: 442px;
+    overflow: scroll;
+    background-color:;
+}
+		.style1 {
+	color: #FF0000;
+	font-weight: bold;
+}
+        .style9 {color: #FFFF00}
+        .style10 {font-weight: bold; color: #FFFF00; }
+        </style>
+
+	<body>
+	<div class="container-fluid">
+		<div>
+
+			<div class="row">
+				<div class="col-md-5">
+ 					<form role="form" method="POST" >
+						{% csrf_token %}
+						<fieldset>
+							<p class="text-uppercase pull-center style1">View All Stress Level  ON TRAINED DATA SET DETAILS  !!! </p>
+                            <hr>
+                            <div >
+                              <table border="5" bordercolor="#FF00FF">
+                      <tr><td bgcolor="#FF0000"><span class="style8">uuid</span></td>
+                      <td bgcolor="#FF0000"><span class="style8">VLF</span></td>
+                      <td bgcolor="#FF0000"><span class="style8">HEART RATE</span></td>
+                          <td bgcolor="#FF0000"><span class="style8">LF</span></td>
+                          <td bgcolor="#FF0000"><span class="style8">LF_PCT</span></td>
+                          <td bgcolor="#FF0000"><span class="style8">LF_NU</span></td>
+                           <td bgcolor="#FF0000"><span class="style8">HF</span></td>
+                          <td bgcolor="#FF0000"><span class="style8">HF_PCT</span></td>
+                          <td bgcolor="#FF0000"><span class="style8">HF_NU</span></td>
+                          <td bgcolor="#FF0000"><span class="style8">TP</span></td>
+                          <td bgcolor="#FF0000"><span class="style8">LF_HF</span></td>
+                           <td bgcolor="#FF0000"><span class="style8">HF_LF</span></td>
+                          <td bgcolor="#FF0000"><span class="style8">STRESS LEVEL</span></td>
+                      </tr>
+                            {% for object in list_objects %}
+                      <tr>
+                                        <td bgcolor="#FFFFFF" style="color:red; font-size:20px; font-family:fantasy" ><div align="center">{{object.names}}</div></td>
+                                        <td bgcolor="#FFFFFF" style="font-family:monospace; font-size:19px;  "><div align="center">{{object.VLF}}</div></td>
+                                        <td bgcolor="#FFFFFF" style="font-family:monospace; font-size:19px; "><div align="center">{{object.VLF_PCT}}</div></td>
+                                        <td bgcolor="#FFFFFF" style="font-family:monospace; font-size:19px; "><div align="center">{{object.LF}}</div></td>
+                                         <td bgcolor="#FFFFFF" style="font-family:monospace; font-size:19px; "><div align="center">{{object.LF_PCT}}</div></td>
+                                        <td bgcolor="#FFFFFF" style="font-family:monospace; font-size:19px; "><div align="center">{{object.LF_NU}}</div></td>
+                                        <td bgcolor="#FFFFFF"   style="font-family:monospace; font-size:19px; "><div align="center">{{object.HF}}</div></td>
+                                        <td bgcolor="#FFFFFF" style="font-family:monospace; font-size:19px; "><div align="center">{{object.HF_PCT}} </div></td>
+                                        <td bgcolor="#FFFFFF" style="font-family:monospace; font-size:19px; "><div align="center">{{object.HF_NU}}</div></td>
+                                        <td bgcolor="#FFFFFF" style="font-family:monospace; font-size:19px; "><div align="center">{{object.TP}}</div></td>
+                                        <td bgcolor="#FFFFFF" style="font-family:monospace; font-size:19px; "><div align="center">{{object.LF_HF}}</div></td>
+                                        <td bgcolor="#FF0000" style="font-family:monospace; font-size:19px; "><div align="center" class="style9">{{object.HF_LF}}</div></td>
+                                        <td bgcolor="#FF0000" style="font-family:monospace; font-size:19px; "><div align="center" class="style9">{{object.hrpredict}}</div></td>
+                                 </tr>
+
+                                        {% endfor %}
+                      </table>
+
+                            </div>
+
+
+
+
+						</fieldset>
+					</form>
+				</div>
+
+				<div class="col-md-2">
+					<!-------null------>
+				</div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+    <tr>
